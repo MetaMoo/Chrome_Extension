@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Popup</title>
+	<style>
+		body {
+			min-width: 357px;
+			overflow-x: hidden;
+		}
+	</style>
+</head>
+<body>
+	Choose your MetaMoo Project:
+	<form id="mooProject" name="mooProject">
+		<input type="radio" name="project" value="one">One<br>
+		<input type="radio" name="project" value="two">Two<br>
+		<input type="radio" name="project" value="null" hidden checked>
+	</form>
+	<script src="jquery-1.11.1.min.js"></script>
+	<script src="background.js"></script>
+	<script src="hashLogic.js"></script>
+</body>
+</html>

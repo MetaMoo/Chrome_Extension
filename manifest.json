@@ -1,0 +1,22 @@
+{
+	"manifest_version": 2,
+
+	"name":"MetaMoo",
+	"description": "Organize your thinking, not just your notes.",
+	"version":"0.1",
+	"permissions": [
+		"activeTab",
+		"contextMenus"
+	],
+	"icons": {
+		"16" : "icon.png"
+	},
+	"background": {
+		"scripts":["background.js"],
+		"persistent": false
+	},
+	"browser_action": {
+		"default_icon":"icon.png",
+		"default_popup":"popup.html"
+	}
+}
