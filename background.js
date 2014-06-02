@@ -6,6 +6,8 @@
 function onClickHandler(info, tab) {
     var selectionText = info.selectionText;
     console.log(selectionText);
+  	chrome.tabs.executeScript(null, {file: "content.js"});
+  	
   };
 
 chrome.contextMenus.onClicked.addListener(onClickHandler);
@@ -16,4 +18,3 @@ chrome.runtime.onInstalled.addListener(function() {
   var title = "Tag to MetaMoo";
   var id = chrome.contextMenus.create({"title": title, "contexts":[selection],"id": "context" + selection});
 });
-
