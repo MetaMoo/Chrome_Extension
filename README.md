@@ -16,6 +16,7 @@ Here are the sites that I think will be useful to accomplish the above:
 * https://developer.chrome.com/extensions/tabs#method-sendMessage - send message may be required to send selection information to content script
 * https://developers.google.com/google-apps/spreadsheets - Google spreadsheets API, has some info on Auth as well
 * https://developers.google.com/google-apps/spreadsheets/#adding_a_list_row - Specifically entry on adding row to spreadsheet
+* https://developers.google.com/google-apps/spreadsheets/?csw=1#spreadsheets_api_urls_visibilities_and_projections - Another reference for adding spreadsheet rows.
 * https://developers.google.com/drive/v2/reference/ - Google Drive API reference
 * https://developers.google.com/drive/v2/reference/files/list - list drive files, needed to find metamoodb ID
 * https://developer.chrome.com/extensions/samples - Extension samples. Good for random references
