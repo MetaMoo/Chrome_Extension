@@ -13,6 +13,7 @@ Resources:
 Here are the sites that I think will be useful to accomplish the above:
 * https://developer.chrome.com/extensions/overview - general chrome extension information
 * https://developer.chrome.com/extensions/content_scripts - this is how we are accessing the DOM and creating our drawer
+* https://developer.chrome.com/extensions/tabs#method-sendMessage - send message may be required to send selection information to content script
 * https://developers.google.com/google-apps/spreadsheets - Google spreadsheets API, has some info on Auth as well
 * https://developers.google.com/google-apps/spreadsheets/#adding_a_list_row - Specifically entry on adding row to spreadsheet
 * https://developers.google.com/drive/v2/reference/ - Google Drive API reference
