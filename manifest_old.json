@@ -1,0 +1,34 @@
+{
+	"manifest_version": 2,
+	"name":"MetaMoo",
+	"description": "Organize your thinking, not just your notes.",
+	"version":"0.1",
+	//Permissions are require to create contextmenu item and read the DOM of the page the text was selected.
+	"permissions": [
+		"activeTab",
+		"contextMenus",
+		"tabs", 
+		"http://*/", 
+		"https://*/"
+	],
+	//Metamoo icon
+	"icons": {
+		"16" : "icon.png"
+	},
+	//This is the background script that current instantiates the context menu item.
+/*	"background": {
+		"scripts":["background.js"],
+		"persistent": false
+	},*/
+	//Create icon on the toolbar. Can probably be removed.
+	"browser_action": {
+		"default_icon":"icon.png",
+		"default_popup":"popup.html"
+	},
+	//Create content script that runs on all sites at document start. Also adds jquery to the content page. This is probably the way the popup needs to be built but need to find way to trigger script on click, not page load.
+	"content_scripts": [ {
+    	"js": ["content.js" ],
+    	"matches": [ "<all_urls>" ],
+    	"run_at": "document_start"
+  }]
+}
