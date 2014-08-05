@@ -13,12 +13,13 @@ chrome.contextMenus.onClicked.addListener(onClickHandler);
 // The onClicked callback function.
 function onClickHandler(info, tab) {
 	console.log(info);
-	chrome.tabs.executeScript(null, { file: "content.js" }, function() {
-    chrome.tabs.executeScript(null, { file: "jquery-1.11.1.min.js" });
-});
-	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+	chrome.tabs.executeScript(null, { file: "jquery-1.11.1.min.js" }, function() {
+    chrome.tabs.executeScript(null, { file: "content.js" }, function(){
+    	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
   		chrome.tabs.sendMessage(tabs[0].id, {text: info.selectionText, url : info.pageUrl}, function(response) {
     	console.log(response.farewell);
-  		});
-	});
-};
+  		  });
+	   });
+    }); // End of content execute script
+  }); // End of jquery execute script
+}; // End of onClick Handler
