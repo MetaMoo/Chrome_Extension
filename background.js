@@ -5,6 +5,7 @@ chrome.runtime.onInstalled.addListener(function() {
   var title = "Tag to MetaMoo";
   var id = chrome.contextMenus.create({"title": title, "contexts":[context],
                                          "id": "context" + context}); 
+  
 });
 
 // add click event
