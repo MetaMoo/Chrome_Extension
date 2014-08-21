@@ -6,11 +6,17 @@ span.appendChild(selectText);
 selection.insertNode(span);
 selectedText = '';
 
-modalForm();
+$.getJSON('http://metamoowebapp.herokuapp.com/ping', function(result){
+		if (result.loggedIn === true){
+			modalForm();
+		} else {
+			modalLoginPrompt();
+		};
+});
 
 function modalForm(){
 	console.log("Submitting form");
-	$.modal("<div><h1>MetaMoo</h1></div><form method='post' action='' name='metamoo-form' id='metamoo-form'></fieldset><div><label for='tag'>Tag</label><input id='tag' name='tag' type='text'></input></div><div><label for='note'>Note:</label><textarea id='note' name='note' type='text'></textarea></div><button id='submit' value='submit'>Submit</button><button id='cancel' value='cancel'>Cancel</button></fieldset></form>", {
+	$.modal("<div><h1>MetaMoo</h1></div><form method='post' action='' name='metamoo-form' id='metamoo-form'></fieldset><div><label for='tag'>Tag</label><input id='tag' name='tag' type='text'></input></div><div><label for='note'>Note:</label><textarea id='note' name='note' type='text'></textarea></div><input id='submit' type='submit' value='submit'></input><input id='cancel' type='submit' value='cancel'></input></fieldset></form>", {
 	containerCss:{
 	backgroundColor:"#fff", 
 	borderColor:"#fff", 
@@ -51,7 +57,6 @@ chrome.runtime.onMessage.addListener(
 	  });
 
 $("#metamoo-form").submit(function(event){
-	event.preventDefault();
 	console.log(event);
 	var infoSend = {};
 	var today = new Date();
@@ -65,15 +70,9 @@ $("#metamoo-form").submit(function(event){
 	infoSend['date'] = date;
 	console.log(infoSend);
 
-	$.getJSON('http://metamoowebapp.herokuapp.com/ping', function(result){
-			if (result.loggedIn === true){
-				$.post("http://metamoowebapp.herokuapp.com/snippet", infoSend, function(data){
-				console.log(data);
-			}, "json");
-		} else {
-			modalLoginPrompt();
-		};
-	});
-	
+	$.post("http://metamoowebapp.herokuapp.com/snippet", infoSend, function(data){
+			console.log(data)
+		}, "json");
 	$.modal.close();
+	event.preventDefault();
 });
