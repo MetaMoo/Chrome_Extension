@@ -9,14 +9,14 @@ selectedText = '';
 modalForm();
 
 function modalForm(){
-	console.log("Submitting form");
-	$.modal("<div><h1>MetaMoo</h1></div><form method='post' action='' name='metamoo-form' id='metamoo-form'></fieldset><div><label for='tag'>Tag</label><input id='tag' name='tag' type='text'></input></div><div><label for='note'>Note:</label><textarea id='note' name='note' type='text'></textarea></div><button id='submit' value='submit'>Submit</button><button id='cancel' value='cancel'>Cancel</button></fieldset></form>", {
+	$.modal("<img class='logo' src='http://metamoowebapp.herokuapp.com/images/main_logo.png'><form method='post' action='' name='metamoo-form' id='metamoo-form'><div class='form-group'><label class='form-label tag-label' for='tag'>Tag</label><input class='form-control tag' name='tag' type='text'></input></div><div class='form-group'><label class='form-label note-label' for='note'>Note</label><textarea class='form-control note' name='note' type='text'></textarea></div><button class='form-btn' value='submit' type='submit'>Submit</button><button class='form-btn cancel-btn' value='cancel'>Cancel</button></div></form>", {
 	containerCss:{
-	backgroundColor:"#fff", 
-	borderColor:"#fff", 
-	height:"30%", 
-	padding:0, 
-	width:"40%"
+		backgroundColor:"#fff", 
+		borderColor:"#676767", 
+		height:"40%", 
+		padding:"2%", 
+		width:"40%",
+		right: "50px"
 	}}, {onOpen: function (dialog) {
 	dialog.overlay.fadeIn('slow', function () {
 		dialog.container.slideDown('slow', function () {
@@ -29,11 +29,11 @@ function modalForm(){
 function modalLoginPrompt(){
 	$.modal("<div><h1>MetaMoo</h1></div><h1>Please visit MetaMoo to Login</h1><p>Logged in? <a href='#'>Continue</a></div>", {
 	containerCss:{
-	backgroundColor:"#fff", 
-	borderColor:"#fff", 
-	height:"30%", 
-	padding:0, 
-	width:"40%"
+		backgroundColor:"#fff", 
+		borderColor:"#fff", 
+		height:"30%", 
+		padding:0, 
+		width:"40%"
 	}}, {onOpen: function (dialog) {
 	dialog.overlay.fadeIn('slow', function () {
 		dialog.container.slideDown('slow', function () {
@@ -49,6 +49,12 @@ chrome.runtime.onMessage.addListener(
 	      sendResponse({farewell: "goodbye"});
 	  	  selectedText = request;
 	  });
+
+$('.cancel-btn').click(function(){
+	event.preventDefault();
+	$.modal.close();
+	console.log("cancelling")
+});
 
 $("#metamoo-form").submit(function(event){
 	event.preventDefault();
