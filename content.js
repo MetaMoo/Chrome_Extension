@@ -15,9 +15,9 @@ function modalForm(){
 		borderColor:"#676767",
 		borderWidth: "1px",
 		borderStyle: "solid", 
-		height:"43%", 
+		height:"400px", 
 		padding:"1%", 
-		width:"40%",
+		width:"300px",
 		left: "60%",
 		top: "50px"
 	}}, {onOpen: function (dialog) {
@@ -36,9 +36,9 @@ function modalLoginPrompt(){
 		borderColor:"#676767",
 		borderWidth: "1px",
 		borderStyle: "solid", 
-		height:"43%", 
+		height:"400px", 
 		padding:"1%", 
-		width:"40%",
+		width:"300px",
 		left: "60%",
 		top: "50px"
 	}}, {onOpen: function (dialog) {
