@@ -1,3 +1,7 @@
+.simplemodal-wrap {
+	overflow: hidden;
+}
+
 #metamoo-logo {
 	padding-left: 20%;
 	width: 60%;
@@ -17,7 +21,7 @@
 	height: 185px;
 	line-height: 20px;
 	margin-bottom: 50px;
-	margin-left: 15px;
+	margin-left: 5px;
 	margin-right: 0px;
 	margin-top: 0px;
 	padding-bottom: 0px;
