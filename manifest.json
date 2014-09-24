@@ -3,7 +3,7 @@
 {
 	"manifest_version": 2,
 	"name":"Tag to MetaMoo",
-	"description": "MetaMoo Extenstion for Chrome - The best way to organize your highlights and notes when you read online",
+	"description": "MetaMoo Extenstion for Chrome - The simplest way to organize your highlights and notes while reading online",
 	"version":"0.1",
   	"permissions": [
 		"activeTab",
